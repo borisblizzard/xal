@@ -293,17 +293,6 @@ namespace xal
 		/// @return The actual audio filename.
 		virtual hstr findAudioFile(chstr filename) const;
 
-#ifndef _DOXYGEN_SHOULD_SKIP_THIS
-		HL_DEPRECATED("Deprecated API. Use AudioManager::getPlayingCount() instead.")
-		bool isAnyPlaying(chstr soundName) { return (this->getPlayingCount(soundName) > 0); }
-		HL_DEPRECATED("Deprecated API. Use AudioManager::getFadingCount() instead.")
-		bool isAnyFading(chstr soundName) { return (this->getFadingCount(soundName) > 0); }
-		HL_DEPRECATED("Deprecated API. Use AudioManager::getFadingInCount() instead.")
-		bool isAnyFadingIn(chstr soundName) { return (this->getFadingInCount(soundName) > 0); }
-		HL_DEPRECATED("Deprecated API. Use AudioManager::getFadingOutCount() instead.")
-		bool isAnyFadingOut(chstr soundName) { return (this->getFadingOutCount(soundName) > 0); }
-#endif
-
 	protected:
 		/// @brief Name of the audio system.
 		hstr name;
