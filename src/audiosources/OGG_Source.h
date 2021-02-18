@@ -30,11 +30,11 @@ namespace xal
 		OGG_Source(chstr filename, SourceMode sourceMode, BufferMode bufferMode);
 		~OGG_Source();
 
-		bool open();
-		void close();
-		void rewind();
-		bool load(hstream& output);
-		int loadChunk(hstream& output, int size = STREAM_BUFFER_SIZE);
+		bool open() override;
+		void close() override;
+		void rewind() override;
+		bool load(hstream& output) override;
+		int loadChunk(hstream& output, int size = STREAM_BUFFER_SIZE) override;
 
 	protected:
 		OggVorbis_File oggStream;

@@ -30,12 +30,12 @@ namespace xal
 		NoAudio_AudioManager(void* backendId, bool threaded = false, float updateTime = 0.01f, chstr deviceName = "");
 		~NoAudio_AudioManager();
 
-		hstr findAudioFile(chstr _filename) const;
+		hstr findAudioFile(chstr _filename) const override;
 
 	protected:
-		Sound* _createSound(chstr filename, chstr categoryName, chstr prefix = "");
-		Sound* _createSound(chstr name, chstr categoryName, unsigned char* data, int size, int channels, int samplingRate, int bitsPerSample);
-		Player* _createSystemPlayer(Sound* sound);
+		Sound* _createSound(chstr filename, chstr categoryName, chstr prefix = "") override;
+		Sound* _createSound(chstr name, chstr categoryName, unsigned char* data, int size, int channels, int samplingRate, int bitsPerSample) override;
+		Player* _createSystemPlayer(Sound* sound) override;
 
 	};
 

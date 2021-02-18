@@ -29,9 +29,9 @@ namespace xal
 	protected:
 		bool playing;
 
-		bool _systemIsPlaying() const;
-		void _systemPlay();
-		int _systemStop();
+		bool _systemIsPlaying() const override;
+		void _systemPlay() override;
+		int _systemStop() override;
 
 	};
 

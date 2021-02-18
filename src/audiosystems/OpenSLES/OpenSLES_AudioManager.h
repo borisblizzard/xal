@@ -45,7 +45,7 @@ namespace xal
 		SLEngineItf engine;
 		SLObjectItf outputMixObject;
 
-		Player* _createSystemPlayer(Sound* sound);
+		Player* _createSystemPlayer(Sound* sound) override;
 		
 	};
 	

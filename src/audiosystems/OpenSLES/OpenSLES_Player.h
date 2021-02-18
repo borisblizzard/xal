@@ -49,19 +49,19 @@ namespace xal
 		unsigned char* streamBuffers[STREAM_BUFFER_COUNT]; // OpenSLES does not keep audio data alive so streamed audio has to be cached
 		int buffersEnqueued;
 
-		void _update(float timeDelta);
+		void _update(float timeDelta) override;
 
-		bool _systemIsPlaying() const;
-		unsigned int _systemGetBufferPosition() const;
-		bool _systemNeedsStreamedBufferPositionCorrection() const { return false; }
-		bool _systemPreparePlay();
-		void _systemPrepareBuffer();
-		void _systemUpdateGain();
-		void _systemUpdatePitch();
-		void _systemPlay();
-		int _systemStop();
-		void _systemUpdateNormal();
-		int _systemUpdateStream();
+		bool _systemIsPlaying() const override;
+		unsigned int _systemGetBufferPosition() const override;
+		bool _systemNeedsStreamedBufferPositionCorrection() const  override{ return false; }
+		bool _systemPreparePlay() override;
+		void _systemPrepareBuffer() override;
+		void _systemUpdateGain() override;
+		void _systemUpdatePitch() override;
+		void _systemPlay() override;
+		int _systemStop() override;
+		void _systemUpdateNormal() override;
+		int _systemUpdateStream() override;
 
 		void _enqueueBuffer(hstream& stream);
 		int _fillStreamBuffers(int count);
