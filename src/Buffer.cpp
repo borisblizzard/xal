@@ -296,7 +296,7 @@ namespace xal
 			this->boundPlayers /= player;
 		}
 		hmutex::ScopeLock lock(&this->asyncLoadMutex);
-		if (this->boundPlayers.size() == 0 && this->mode == BufferMode::OnDemand || this->mode == BufferMode::Streamed)
+		if ((this->boundPlayers.size() == 0 && this->mode == BufferMode::OnDemand) || this->mode == BufferMode::Streamed)
 		{
 			this->stream.clear(1);
 			this->asyncLoadQueued = false;
